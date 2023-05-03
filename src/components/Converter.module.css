@@ -1,0 +1,184 @@
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.errorMessage {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	font-size: 36px;
+	font-weight: 400;
+	color: white;
+	background-color: #7c68eebd;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #7c68ee70;
+}
+
+.errorMessage span {
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.errorAdvices {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.errorIcon {
+	margin-left: 10px;
+	color: greenyellow;
+}
+
+.calculator {
+	max-width: 90%;
+	min-height: 82vh;
+	margin: 0 auto;
+	margin-top: 3%;
+	background-color: #7c68ee58;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #7c68ee70;
+}
+
+.inputGroupWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.inputGroupWrapper button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 15px;
+	margin-top: 10px;
+	font-size: 40px;
+	color: aliceblue;
+	background-color: dodgerblue;
+	border: none;
+	border-radius: 20%;
+	transition: all .2s;
+	cursor: pointer;
+}
+
+.inputGroupWrapper button:hover {
+	transform: scale(1.2);
+	background-color: #0a78e6;
+	box-shadow: 0 0 8px #0000007d;
+	color: black;
+}
+
+.inputGroupWrapper button:active {
+	transform: scale(0.9);
+}
+
+.inputGroup {
+	padding: 10px;
+}
+
+.labelWrapper {
+	text-align: left;
+}
+
+.labelWrapper label {
+	font-size: 24px;
+}
+
+.amountInput {
+	text-align: center;
+	font-size: 50px;
+}
+
+.inputSelection select, input {
+	font-family: 'Share Tech Mono', monospace;
+	width: 700px;
+	padding: 10px;
+	font-size: 30px;
+	background-color: #3676eeaf;
+	border: none;
+	border-bottom: 1px solid black;
+	transition: all .2s;
+	outline: none;
+	cursor: pointer;
+	color: white;
+}
+
+.inputSelection select:hover, input:hover {
+	filter: brightness(1.5);
+	color: black;
+	background-color: #3676eecb;
+	box-shadow: 2px 2px 2px black;
+}
+
+.resultBox {
+	margin-top: 20px;
+	font-size: 36px;
+	background-color: rgba(100, 148, 237, 0.751);
+	padding: 10px;
+	filter: contrast(1.2);
+	color: floralwhite;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.45);
+	border-radius: 5px;
+}
+
+select::-webkit-scrollbar {
+  width: 10px;
+}
+
+select::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+select::-webkit-scrollbar-thumb {
+  background-color: #00008b9a;
+  border-radius: 5px;
+}
+
+select {
+  scrollbar-width: thin;
+  scrollbar-color: #00008b9a #f1f1f1;
+	border-radius: 5px;
+}
+
+select::-moz-scrollbar-thumb {
+	border-radius: 5px;
+}
+
+@media (max-width: 950px) {
+	.calculator {
+		min-height: 60vh;
+		margin-top: 15%;
+	}
+	.inputGroup {
+		padding: 5px;
+	}
+	.inputSelection select, input {
+		width: 85%;
+		font-size: 28px;
+	}
+	.inputGroupWrapper button {
+		padding: 10px;
+		font-size: 35px;
+	}
+	.amountInput {
+		font-size: 36px;
+	}
+	.labelWrapper {
+		text-align: center;
+	}
+	.resultBox {
+		padding: 5px;
+		font-size: 26px;
+	}
+}
+
