@@ -3,7 +3,7 @@ function Options() {
 		<>
 			<option value={'AED'}>AED	- UAE Dirham</option>
 			<option value={'ANG'}>ANG	- Netherlands Antillian Guilder</option>
-			<option value={'AUD'}>AUD -	Australian Dollar</option>
+			<option value={'AUD'}>AUD 	- Australian Dollar</option>
 			<option value={'BRL'}>BRL	- Brazilian Real</option>
 			<option value={'CAD'}>CAD	- Canadian Dollar</option>
 			<option value={'CHF'}>CHF	- Swiss Franc</option>
