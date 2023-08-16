@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { TbArrowsLeftRight, TbClick } from 'react-icons/tb';
 import { ImConnection } from 'react-icons/im';
@@ -5,8 +6,14 @@ import { MdRefresh } from 'react-icons/md';
 import Options from './Options';
 import styles from './Converter.module.css';
 
+interface IData {
+	conversion_rate: number,
+	conversion_result: number,
+}
+
 function Converter() {
-	const [data, setData] = useState(null);
+
+	const [data, setData] = useState<IData | null>(null);
   const [error, setError] = useState('');
 	const [amount, setAmount] = useState(100);
 	const [fromValue, setFromValue] = useState('USD');
@@ -14,21 +21,21 @@ function Converter() {
 	const [showResultBox, setShowResultBox] = useState(false);	
 	const apiKey = 'dfba807a3a179431156d7191';
 
-	function invertSelectionHandler(event) {
+	const invertSelectionHandler: React.MouseEventHandler<HTMLButtonElement> = (event) => {
 		event.preventDefault();
 		setFromValue(toValue);
 		setToValue(fromValue);
 		setShowResultBox(false);
 	}
 	
-	const fetchData = async (event) => {
+	const fetchData: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
 		try {
 			event.preventDefault();
 			const response = await fetch (`https://v6.exchangerate-api.com/v6/${apiKey}/pair/${fromValue}/${toValue}/${amount}`);
 			const data = await response.json();
 			setData(data);
 		} catch (error) {
-			setError(error.message)
+			if (error instanceof Error) setError(error.message);
 		}
 		setShowResultBox(true);
 	}
@@ -60,7 +67,7 @@ function Converter() {
 							<input 
 								className={styles.amountInput}
 								value={amount} 
-								onChange={(event) => setAmount(event.target.value)} 
+								onChange={(event) => setAmount(Number(event.target.value))} 
 								onFocus={() => setShowResultBox(false)}
 							/>
 						</div>						
